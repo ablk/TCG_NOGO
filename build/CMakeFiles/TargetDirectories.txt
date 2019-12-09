@@ -1,3 +1,0 @@
-/home/0860034/TCG_NOGO/build/CMakeFiles/rebuild_cache.dir
-/home/0860034/TCG_NOGO/build/CMakeFiles/TCG_NOGO.dir
-/home/0860034/TCG_NOGO/build/CMakeFiles/edit_cache.dir
