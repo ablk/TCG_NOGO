@@ -1,6 +1,7 @@
 A worse version for TCG HW
 ===============
 Duplicate from https://github.com/lclan1024/HaHaNoGo.git
+
 HaHaNoGo
 ===============
 This is the NoGo program that won against HappyNoGo and got the first place in TAAI 2016. (http://www.cs.nthu.edu.tw/~taai2016/game.html) 
