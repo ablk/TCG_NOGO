@@ -4,8 +4,6 @@
 double MCTStree::getscore( ucbnode* nodeptr, int child)
 {
 	ucbnode *tmp = (nodeptr->childptr)+child;
-	char &p = tmp->place;
-	bool &c = tmp->color;
 	double &N = tmp->count ;
     double &M = tmp->mean;
     double V = M*(1-M)+sqrt(2*logt/N);
@@ -57,7 +55,7 @@ ucbnode* MCTStree::getbestchild(ucbnode* nodeptr)
 void MCTStree::select(board &b)
 {
 
-	bool j = ! b.just_play_color();//next to play
+	//bool j = ! b.just_play_color();//next to play
 	ucbnode* nodeptr = root;
 	b.bpsize=0;
 	b.wpsize=0;
@@ -67,8 +65,8 @@ void MCTStree::select(board &b)
 	{
         if(!randplay){
             nodeptr = getbestchild(nodeptr);
-		}else{
-            nodeptr = nodeptr->childptr[rand()%nodeptr->csize];
+	}else{
+            nodeptr = nodeptr->childptr+(rand()%(nodeptr->csize));
         }
         path.push_back(nodeptr);
 	//	cout<<inttostring(nodeptr->place)<<' ';
@@ -88,7 +86,7 @@ void MCTStree::select(board &b)
 }
 void MCTStree::update(double result,board& b)
 {
-	for(int i=0;i<path.size();i++)
+	for(uint32_t i=0;i<path.size();i++)
 	{
 		path[i]->addresult(result);
 	}

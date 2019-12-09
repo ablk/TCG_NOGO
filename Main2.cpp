@@ -51,11 +51,6 @@ int main(int argc, char** argv)
 {
 	int i,k;
 	string s,c,p;
-	if (argc == 2)
-	{
-		istringstream (string(argv[1])) >> simulationCnt;
-		cerr << "set simulation cnt to: " << simulationCnt << endl;
-	}
 	bool j;
 	board b;
 	tree.clear();
@@ -63,7 +58,6 @@ int main(int argc, char** argv)
 	srand(time(NULL)) ;
 	vector<float> policy;
 	float value;
-	//freopen("0016086.txt","w",stdout);
 	while(cin>>s)
 	{
 		if(s=="play"||s=="p")
@@ -178,12 +172,8 @@ int main(int argc, char** argv)
 		}
 		else if(s== "name")
 		{
-			cout<<"=haha"<< UCB_WEIGHT * 100<<"_rn"<<ravenum<<"_bn"<<basenum << "\n\n";
 		}else if(s== "time")
 		{
-			cin>>t;
-			t*=1000;
-			t++;
 			cout<<"="<<endl<<endl;
 		}else if(s == "boardsize")
 		{
