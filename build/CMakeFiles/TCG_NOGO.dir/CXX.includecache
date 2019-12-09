@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/ablk/Downloads/TCG_NOGO/MCTStree2.cpp
+/home/0860034/TCG_NOGO/MCTStree2.cpp
 MCTStree2.h
-/home/ablk/Downloads/TCG_NOGO/MCTStree2.h
+/home/0860034/TCG_NOGO/MCTStree2.h
 
-/home/ablk/Downloads/TCG_NOGO/MCTStree2.h
+/home/0860034/TCG_NOGO/MCTStree2.h
 ucbnode2.h
-/home/ablk/Downloads/TCG_NOGO/ucbnode2.h
+/home/0860034/TCG_NOGO/ucbnode2.h
 
-/home/ablk/Downloads/TCG_NOGO/Main2.cpp
+/home/0860034/TCG_NOGO/Main2.cpp
 iostream
 -
 set
@@ -36,9 +36,9 @@ string.h
 sstream
 -
 MCTStree2.h
-/home/ablk/Downloads/TCG_NOGO/MCTStree2.h
+/home/0860034/TCG_NOGO/MCTStree2.h
 
-/home/ablk/Downloads/TCG_NOGO/bitboard.h
+/home/0860034/TCG_NOGO/bitboard.h
 string.h
 -
 iostream
@@ -46,13 +46,13 @@ iostream
 cstdio
 -
 
-/home/ablk/Downloads/TCG_NOGO/board.cpp
+/home/0860034/TCG_NOGO/board.cpp
 board.h
-/home/ablk/Downloads/TCG_NOGO/board.h
+/home/0860034/TCG_NOGO/board.h
 
-/home/ablk/Downloads/TCG_NOGO/board.h
+/home/0860034/TCG_NOGO/board.h
 bitboard.h
-/home/ablk/Downloads/TCG_NOGO/bitboard.h
+/home/0860034/TCG_NOGO/bitboard.h
 iostream
 -
 map
@@ -68,19 +68,19 @@ string
 stdlib.h
 -
 boardcn.h
-/home/ablk/Downloads/TCG_NOGO/boardcn.h
+/home/0860034/TCG_NOGO/boardcn.h
 math.h
 -
 
-/home/ablk/Downloads/TCG_NOGO/boardcn.h
+/home/0860034/TCG_NOGO/boardcn.h
 
-/home/ablk/Downloads/TCG_NOGO/ucbnode2.cpp
+/home/0860034/TCG_NOGO/ucbnode2.cpp
 ucbnode2.h
-/home/ablk/Downloads/TCG_NOGO/ucbnode2.h
+/home/0860034/TCG_NOGO/ucbnode2.h
 
-/home/ablk/Downloads/TCG_NOGO/ucbnode2.h
+/home/0860034/TCG_NOGO/ucbnode2.h
 board.h
-/home/ablk/Downloads/TCG_NOGO/board.h
+/home/0860034/TCG_NOGO/board.h
 math.h
 -
 

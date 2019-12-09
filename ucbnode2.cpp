@@ -71,7 +71,7 @@ int ucbnode::getbestmove()
 	double ans=-666,tmp;
 	for(int i = 0;i<csize;i++)
 	{
-		tmp = childptr[i].count;// * childptr[i].mean;
+		tmp = childptr[i].mean;///////////////////
         if(tmp > ans)
 		{
 			ans = tmp;

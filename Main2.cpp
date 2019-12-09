@@ -104,13 +104,16 @@ int main(int argc, char** argv)
                 }
                 e=clock();
                 double dt=(double)(e-st);
-                
-                if(dt>250){
+		//cout<<"dt:"<<dt<<endl;
+
+                if(dt>0.1*CLOCKS_PER_SEC){
                     tree.randplay=false;
                 }
-                else if(dt>750){
+                if(dt>0.75*CLOCKS_PER_SEC){
+		    //cout<<"tt"<<tree.total<<endl;
                     break;
-                }
+                
+		}
             }
 			
 			k= tree.root -> getbestmove();
@@ -172,6 +175,7 @@ int main(int argc, char** argv)
 		}
 		else if(s== "name")
 		{
+			cout<<"=666666666\n\n";
 		}else if(s== "time")
 		{
 			cout<<"="<<endl<<endl;

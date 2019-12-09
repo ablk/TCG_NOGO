@@ -152,7 +152,8 @@ void MCTStree::reset(board &b)
 	totalnode =0;
     path.clear();
 	path.push_back(root);
-    randplay=true;
+   	if((b.bpsize+b.wpsize)<BOARDSSIZE/5) randplay=true;
+	else randplay=false;
 }
 
 void MCTStree::show_path()

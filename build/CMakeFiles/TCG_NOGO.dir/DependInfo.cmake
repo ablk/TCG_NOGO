@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ablk/Downloads/TCG_NOGO/MCTStree2.cpp" "/home/ablk/Downloads/TCG_NOGO/build/CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o"
-  "/home/ablk/Downloads/TCG_NOGO/Main2.cpp" "/home/ablk/Downloads/TCG_NOGO/build/CMakeFiles/TCG_NOGO.dir/Main2.cpp.o"
-  "/home/ablk/Downloads/TCG_NOGO/board.cpp" "/home/ablk/Downloads/TCG_NOGO/build/CMakeFiles/TCG_NOGO.dir/board.cpp.o"
-  "/home/ablk/Downloads/TCG_NOGO/ucbnode2.cpp" "/home/ablk/Downloads/TCG_NOGO/build/CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o"
+  "/home/0860034/TCG_NOGO/MCTStree2.cpp" "/home/0860034/TCG_NOGO/build/CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o"
+  "/home/0860034/TCG_NOGO/Main2.cpp" "/home/0860034/TCG_NOGO/build/CMakeFiles/TCG_NOGO.dir/Main2.cpp.o"
+  "/home/0860034/TCG_NOGO/board.cpp" "/home/0860034/TCG_NOGO/build/CMakeFiles/TCG_NOGO.dir/board.cpp.o"
+  "/home/0860034/TCG_NOGO/ucbnode2.cpp" "/home/0860034/TCG_NOGO/build/CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
