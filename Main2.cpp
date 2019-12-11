@@ -97,6 +97,7 @@ int main(int argc, char** argv)
 			}
 			tree.reset(b);
 			e = st = clock();
+		//tree.randplay=false;
             while(1){
                 int repeat66=66;
                 while(repeat66--){
@@ -106,13 +107,11 @@ int main(int argc, char** argv)
                 double dt=(double)(e-st);
 		//cout<<"dt:"<<dt<<endl;
 
-                if(dt>0.1*CLOCKS_PER_SEC){
+                if(dt>0.2*CLOCKS_PER_SEC){
                     tree.randplay=false;
                 }
                 if(dt>0.75*CLOCKS_PER_SEC){
-		    //cout<<"tt"<<tree.total<<endl;
-                    break;
-                
+		    break;
 		}
             }
 			
@@ -122,7 +121,7 @@ int main(int argc, char** argv)
 			policy = tree.root->getPolicy();
 			tree.root ->show_child();
 			value = tree.root ->show_inf(k);
-			cerr<<"average deep : "<<(double)tree.total / (double)i<<endl;
+			cerr<<"average deep : "<<(double)tree.total / (double)tree.root->csize<<endl;
 			cerr<<"total node : "<< tree.totalnode<<endl;
 			tree.show_path();
 			if(s != "reg_genmove")

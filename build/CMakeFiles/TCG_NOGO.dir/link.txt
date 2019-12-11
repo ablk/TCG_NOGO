@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -Wall -O3  -rdynamic CMakeFiles/TCG_NOGO.dir/Main2.cpp.o CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o CMakeFiles/TCG_NOGO.dir/board.cpp.o  -o ../TCG_NOGO 

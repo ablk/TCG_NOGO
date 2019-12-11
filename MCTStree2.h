@@ -2,7 +2,6 @@
 #define MCTS_H
 #include "ucbnode2.h"
 
-const double UCB_MINVAR = 0.25;
 const double float_tor = 0.000666;
 class MCTStree
 {

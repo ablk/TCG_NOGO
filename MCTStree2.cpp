@@ -1,17 +1,13 @@
 #include "MCTStree2.h"
 
-
+const double ExploreConst=0.1;
 double MCTStree::getscore( ucbnode* nodeptr, int child)
 {
 	ucbnode *tmp = (nodeptr->childptr)+child;
-	double &N = tmp->count ;
-    double &M = tmp->mean;
-    double V = M*(1-M)+sqrt(2*logt/N);
-    if(V>UCB_MINVAR){
-        V=UCB_MINVAR;
-    }
+	double &N = tmp->count;
+	double &M = tmp->mean;
 
-	double ret = tmp->mean +  sqrt( nodeptr->logc / N *V);
+	double ret = M + ExploreConst*sqrt(2* nodeptr->logc / N);
 	//cout<<tmp->ravemean<<' '<<ret/(N+NR)<<' '<<N<<' '<<NR<<' '<<nodeptr->logc<<endl;
 	return ret;
 }
@@ -152,8 +148,7 @@ void MCTStree::reset(board &b)
 	totalnode =0;
     path.clear();
 	path.push_back(root);
-   	if((b.bpsize+b.wpsize)<BOARDSSIZE/5) randplay=true;
-	else randplay=false;
+   	randplay=true;
 }
 
 void MCTStree::show_path()

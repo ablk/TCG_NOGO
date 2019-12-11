@@ -25,14 +25,16 @@ void ucbnode::addresult(double result)
 {
     count +=1;
     logc = log(count);
+
+
     if((result > 0 && color==BLACK) || (result < 0 && color==WHITE) )
     {
-        //mean = (mean*count+1.00)/count;
         mean = mean + (1.00 - mean)/count;
+	//mean=1.0;
     }else
     {
-        //mean = (mean*count)/count;
         mean = mean - mean/count;
+	//mean=0.0;
     }
 }
 
@@ -71,7 +73,7 @@ int ucbnode::getbestmove()
 	double ans=-666,tmp;
 	for(int i = 0;i<csize;i++)
 	{
-		tmp = childptr[i].mean;///////////////////
+		tmp = childptr[i].count + childptr[i].count*childptr[i].mean;///////////////////
         if(tmp > ans)
 		{
 			ans = tmp;
@@ -103,10 +105,11 @@ void ucbnode::show_child()
 		if(childptr[i].count<10)continue;
 		cerr<< inttoGTPstring((int)childptr[i].place)<<' '<<childptr[i].mean<<' '<<childptr[i].count<<' ';
 	}
+	cerr<<endl;
 }
 float ucbnode::show_inf(int best)
 {
-		cerr<<"total : "<< count -basenum <<endl<<"winrate :"<<(childptr[best].mean);
+		cerr<<"total : "<< count -basenum <<endl<<"winrate :"<<(childptr[best].mean)<<endl;
 		return childptr[best].mean;
 }
 
