@@ -25,16 +25,16 @@ void ucbnode::addresult(double result)
 {
     count +=1;
     logc = log(count);
-
-
+    
+    
     if((result > 0 && color==BLACK) || (result < 0 && color==WHITE) )
     {
         mean = mean + (1.00 - mean)/count;
-	//mean=1.0;
+        //mean=1.0;
     }else
     {
         mean = mean - mean/count;
-	//mean=0.0;
+        //mean=0.0;
     }
 }
 
@@ -51,12 +51,12 @@ void ucbnode::expansion(board &b)
             child[i]=k;
 			csize++;
             k++;
-		}
-	}
+        }
+    }
 	if(csize==0)
 	{
 		return;
-	}
+    }
 	childptr = new ucbnode [csize];
     for(i=0;i<BOARDSSIZE;i++)
 	{
@@ -64,8 +64,8 @@ void ucbnode::expansion(board &b)
 		{
             k=child[i];
             childptr[k].initucbnode(i,j);
-		}
-	}
+        }
+    }
 }
 int ucbnode::getbestmove()
 {
@@ -78,8 +78,8 @@ int ucbnode::getbestmove()
 		{
 			ans = tmp;
 			ret=i;
-		}
-	}
+        }
+    }
 	return ret;
 }
 
@@ -90,11 +90,11 @@ vector<float> ucbnode::getPolicy()
 	for (int i = 0; i < csize; i++)
 	{
 		sum+= childptr[i].count;
-	}
+    }
 	for (int i = 0; i < csize; i++)
 	{
 		ret[childptr[i].place] = childptr[i].count / sum;
-	}
+    }
 	return ret;
 }
 
@@ -104,13 +104,13 @@ void ucbnode::show_child()
 	{
 		if(childptr[i].count<10)continue;
 		cerr<< inttoGTPstring((int)childptr[i].place)<<' '<<childptr[i].mean<<' '<<childptr[i].count<<' ';
-	}
+    }
 	cerr<<endl;
 }
 float ucbnode::show_inf(int best)
 {
-		cerr<<"total : "<< count -basenum <<endl<<"winrate :"<<(childptr[best].mean)<<endl;
-		return childptr[best].mean;
+    cerr<<"total : "<< count -basenum <<endl<<"winrate :"<<(childptr[best].mean)<<endl;
+    return childptr[best].mean;
 }
 
 string ucbnode::inttoGTPstring(int i)
