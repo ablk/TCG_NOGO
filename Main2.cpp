@@ -69,6 +69,7 @@ int main(int argc, char** argv)
 			else j=1;
 			b.add(GTPstringtoint(p),j);
             opponent_move=GTPstringtoint(p);
+	    		//cerr<<"MOVE:"<<opponent_move<<endl;
 			cout<<"="<<endl<<endl;
         }
 		else if(s[0]=='e')
@@ -144,7 +145,7 @@ int main(int argc, char** argv)
 			ucbnode* tmp = tree.root -> childptr;
 			int best_move = (tmp+k)->place;
 			policy = tree.root->getPolicy();
-			tree.root ->show_child();
+			//tree.root ->show_child();
 			value = tree.root ->show_inf(k);
 			cerr<<"average deep : "<<(double)tree.total / (double)tree.root->csize<<endl;
 			tree.show_path();

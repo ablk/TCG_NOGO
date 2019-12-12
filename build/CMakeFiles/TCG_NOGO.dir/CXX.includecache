@@ -13,6 +13,8 @@ MCTStree2.h
 /home/0860034/TCG_NOGO/MCTStree2.h
 ucbnode2.h
 /home/0860034/TCG_NOGO/ucbnode2.h
+Parameters.h
+/home/0860034/TCG_NOGO/Parameters.h
 
 /home/0860034/TCG_NOGO/Main2.cpp
 iostream
@@ -37,6 +39,10 @@ sstream
 -
 MCTStree2.h
 /home/0860034/TCG_NOGO/MCTStree2.h
+Parameters.h
+/home/0860034/TCG_NOGO/Parameters.h
+
+/home/0860034/TCG_NOGO/Parameters.h
 
 /home/0860034/TCG_NOGO/bitboard.h
 string.h
@@ -83,4 +89,6 @@ board.h
 /home/0860034/TCG_NOGO/board.h
 math.h
 -
+Parameters.h
+/home/0860034/TCG_NOGO/Parameters.h
 
