@@ -149,13 +149,17 @@ void MCTStree::reset(board &b)
 }
 
 void MCTStree::setroot(ucbnode* r,board &b)
-{
+{	
 	root = r;
-    rboard = b;
+	//cerr<<"ssssssss"<<root->count<<endl;
+    	rboard = b;
 	total = root->count;
-    path.clear();
+    	path.clear();
 	path.push_back(root);
    	randplay=true;
+	if(root->csize==0){
+		root->expansion(b);
+	}
 }
 
 void MCTStree::show_path()
@@ -181,6 +185,7 @@ void MCTStree::show_path()
 void MCTStree::clear()
 {
 	if( root != NULL)delete root;
+	root=NULL;
 }
 string MCTStree::inttoGTPstring(int i)
 {

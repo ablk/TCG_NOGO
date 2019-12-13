@@ -380,6 +380,8 @@ void board::clear()
     notsafe[1].clear();
     memset(air,0,sizeof(air));
     memset(countair,0,sizeof(countair));
+    bpsize=0;
+    wpsize=0;
 }
 
 
