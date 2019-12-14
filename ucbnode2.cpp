@@ -7,7 +7,19 @@ ucbnode::~ucbnode()
 {
     if(childptr != NULL) {delete [] childptr;childptr=NULL;}
 }
-
+void Copy(ucbnode &u){
+	place = u.place;
+	color = u.color;
+	memset(child,-1,sizeof(child));
+	for(int c=0;c<u.csize;c++){
+		child[c]=u.child[c];
+	}
+	csize = u.csize;
+	count = u.count;
+	mean = u.mean;
+	logc = u.logc;
+	childptr = u.childptr;
+}
 
 void ucbnode::initucbnode(int i,bool j)
 {

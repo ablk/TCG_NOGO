@@ -29,7 +29,7 @@
         //update ucbnode on path
         void run_a_cycle();
         void reset(board &b);
-	void setroot(ucbnode* r,board &b);
+		void setroot(ucbnode* r,board &b);
         void clear();
         void show_path();
         string inttostring(int i);

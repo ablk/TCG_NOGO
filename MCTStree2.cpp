@@ -151,10 +151,9 @@ void MCTStree::reset(board &b)
 void MCTStree::setroot(ucbnode* r,board &b)
 {	
 	root = r;
-	//cerr<<"ssssssss"<<root->count<<endl;
-    	rboard = b;
+    rboard = b;
 	total = root->count;
-    	path.clear();
+    path.clear();
 	path.push_back(root);
    	randplay=true;
 	if(root->csize==0){

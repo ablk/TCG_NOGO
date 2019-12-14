@@ -7,9 +7,9 @@
     class ucbnode
     {
         public:
-        char place;//move
+        int place;//move
         bool color;//black or white
-        char child[BOARDSSIZE];//map from move to childnode idx
+        int child[BOARDSSIZE];//map from move to childnode idx
         int csize; // child size
         ucbnode* childptr;
         double count;//played count
@@ -23,8 +23,10 @@
         void show_child();
         float show_inf(int child);
         void expansion(board &b);
-        string inttostring(int i);
+        void Copy(ucbnode &u);
+		string inttostring(int i);
         string inttoGTPstring(int i);
+		
         ucbnode();
         ~ucbnode();
         void setlogc();

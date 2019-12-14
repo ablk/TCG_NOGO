@@ -9,7 +9,7 @@
 #include <time.h> 
 #include <string.h>
 #include <sstream>
-#include"MCTStree2.h"
+#include "MCTStree2.h"
 #include "Parameters.h"
 using namespace std;
 
@@ -84,7 +84,6 @@ int main(int argc, char** argv)
             cout<<"="<<endl<<endl;
         }else if(s[0]=='g' || s == "reg_genmove")
 		{
-			cerr<<"ffffffffffffff"<<endl;
 			bool j,f=false;
 			int st,e;
 			cin>>c;
@@ -103,40 +102,22 @@ int main(int argc, char** argv)
 				continue;
             }
             if(opponent_move==-1||(b.wpsize+b.bpsize)<=1){
-                cerr<<"sgggggggggggggggg"<<opponent_move<<"  bw"<<b.wpsize+b.bpsize<<endl;
-		    tree.clear();
-		    tree.reset(b);
-	    }
+				tree.clear();
+				tree.reset(b);
+			}
             else{
-
-		//free(tree.root->childptr);
-		cerr<<"eeeeeee"<<endl;
-		//tree.reset(b);
-		    
                 ucbnode* cptr=(tree.root->childptr)[k].childptr;
                 ucbnode* newroot=NULL;
-		//cout<<"ooo"<<opponent_move<<endl;
                 for(int i=0;i<(tree.root->childptr)[k].csize;i++){
-			//cout<<(int)cptr[i].place<<endl;
-                    if(cptr[i].place==opponent_move){
-		        newroot=new ucbnode;
-			newroot -> color = cptr[i].color;
-			newroot -> place = cptr[i].place;
-			newroot -> count = cptr[i].count;
-			newroot -> logc = cptr[i].logc;
-			memset(newroot -> child,-1,sizeof(newroot -> child)  );
-			for(int c=0;c<cptr[i].csize;c++){
-				newroot->child[c]=cptr[i].child[c];
-			}
-			newroot -> childptr = cptr[i].childptr;
-			newroot->mean=cptr[i].mean;
-			newroot->csize=cptr[i].csize;
-			cptr[i].childptr = NULL;
-			break;
+
+                    if(cptr[i].place==opponent_move && cptr[i].color==tree.root->color){
+						newroot=new ucbnode;
+						newroot->copy(cptr[i]);
+						cptr[i].childptr = NULL;
+						break;
                     }
                 }
-		cerr<<"sssssssss"<<newroot->count<<endl;
-		tree.clear();
+				tree.clear();
                 if(newroot){
                     cerr<<"set root to child"<<endl;
                     tree.setroot(newroot,b);
@@ -146,7 +127,6 @@ int main(int argc, char** argv)
                 }
             }
 			e = st = clock();
-            //tree.randplay=false;
             while(1){
                 int repeat66=66;
                 while(repeat66--){
@@ -154,8 +134,6 @@ int main(int argc, char** argv)
                 }
                 e=clock();
                 double dt=(double)(e-st);
-                //cout<<"dt:"<<dt<<endl;
-                
                 if(dt>RandPlayTime*CLOCKS_PER_SEC){
                     tree.randplay=false;
                 }
@@ -178,12 +156,9 @@ int main(int argc, char** argv)
 			{
 				cout<<"="<<inttoGTPstring(best_move)<<endl<<endl;
             }else
-			
-	    {
+			{
 				cout<<"=resign"<<endl<<endl;
             }
-			
-			//tree.clear();
             
         }
 		else if (s == "policy")
