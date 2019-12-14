@@ -7,7 +7,7 @@ ucbnode::~ucbnode()
 {
     if(childptr != NULL) {delete [] childptr;childptr=NULL;}
 }
-void Copy(ucbnode &u){
+void ucbnode::Copy(ucbnode &u){
 	place = u.place;
 	color = u.color;
 	memset(child,-1,sizeof(child));
@@ -85,7 +85,7 @@ int ucbnode::getbestmove()
 	double ans=-666,tmp;
 	for(int i = 0;i<csize;i++)
 	{
-		tmp = childptr[i].count;// + childptr[i].count*childptr[i].mean;///////////////////
+		tmp = childptr[i].count;//*(1-getMaxChildMean());// + childptr[i].count*childptr[i].mean;///////////////////
         if(tmp > ans)
 		{
 			ans = tmp;
@@ -93,6 +93,18 @@ int ucbnode::getbestmove()
         }
     }
 	return ret;
+}
+
+double ucbnode::getMaxChildMean(){
+	if(csize==0)return 0.5;
+	double m=0;
+
+	for(int c=0;c<csize;c++){
+		if(childptr[c].mean>m){
+			m=childptr[c].mean;
+		}
+	}
+	return m;
 }
 
 vector<float> ucbnode::getPolicy()

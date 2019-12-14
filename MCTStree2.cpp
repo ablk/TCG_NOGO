@@ -96,7 +96,7 @@ void MCTStree::run_a_cycle()
 	select(b);
 	ucbnode &last=(*(path.back()));
 	ucbnode *nodeptr;
-	if(last.csize==0 && (last.count > ExpansionConst ||(randplay && last.count > RandExpansionConst) )  )//ｦﾜ､ﾖsimulate 1 ｦｸ
+	if(last.csize==0 && ((last.count > ExpansionCount && last.mean > ExpansionMean) ||(randplay && last.count > RandExpansionCount) )  )//ｦﾜ､ﾖsimulate 1 ｦｸ
 	{
 		last.expansion(b);
 		if(last.csize!=0)

@@ -101,7 +101,7 @@ int main(int argc, char** argv)
 				cout<<"=resign"<<endl<<endl;
 				continue;
             }
-            if(opponent_move==-1||(b.wpsize+b.bpsize)<=1){
+            if(opponent_move==-1||(b.wpsize+b.bpsize)<=1||USENEWTREE){
 				tree.clear();
 				tree.reset(b);
 			}
@@ -112,7 +112,7 @@ int main(int argc, char** argv)
 
                     if(cptr[i].place==opponent_move && cptr[i].color==tree.root->color){
 						newroot=new ucbnode;
-						newroot->copy(cptr[i]);
+						newroot->Copy(cptr[i]);
 						cptr[i].childptr = NULL;
 						break;
                     }
@@ -146,7 +146,7 @@ int main(int argc, char** argv)
 			ucbnode* tmp = tree.root -> childptr;
 			int best_move = (tmp+k)->place;
 			policy = tree.root->getPolicy();
-			//tree.root ->show_child();
+			//tree.root -> show_child();
 			value = tree.root ->show_inf(k);
 			cerr<<"average deep : "<<(double)tree.total / (double)tree.root->csize<<endl;
 			tree.show_path();

@@ -23,8 +23,9 @@
         void show_child();
         float show_inf(int child);
         void expansion(board &b);
+	double getMaxChildMean();
         void Copy(ucbnode &u);
-		string inttostring(int i);
+	string inttostring(int i);
         string inttoGTPstring(int i);
 		
         ucbnode();
