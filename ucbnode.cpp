@@ -94,7 +94,7 @@ void ucbnode::expansion(board &b)
 		if(child[i]!=-1)
 		{
             k=child[i];
-            childptr[k].initucbnode(i,j);
+            childptr[k].initucbnode(i,j,0.5,ravenum);
         }
     }
 }
