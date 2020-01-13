@@ -2,17 +2,17 @@
 #define PM_H
 
 #define basenum 0
-#define ravenum 20
+#define ravenum 0
 #define float_tor 0.000066
 #define ExploreConst 0.25
 
-#define RandPlayTime 0.0
+#define RandPlayTime 0.1
 #define TimeLimit 0.75
-#define ExpansionCount 9
-#define RandExpansionCount 5
+#define ExpansionCount 5
+#define RandExpansionCount 9
 #define ExpansionMean 0.2
 #define USENEWTREE 0
-#define USE_RAVE 1
+#define USE_RAVE 0
 
 
 #endif

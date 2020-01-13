@@ -20,7 +20,7 @@ class ucbnode
     double ravemean;
     double ravelogc;
 
-    void initucbnode(int i,bool j,double rmean,double rnum);
+    void initucbnode(int i,bool j);
     void addresult(double result);
     void addraveresult(double result);
     int getbestmove();

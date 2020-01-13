@@ -19,8 +19,8 @@ class MCTStree
     int total; // total sim num
     bool randplay;
     
-    double rave_num[2][BOARDSSIZE];
-    double rave_wnum[2][BOARDSSIZE];
+  //  double rave_num[2][BOARDSSIZE];
+  //  double rave_wnum[2][BOARDSSIZE];
 
     double getscore( ucbnode* nodeptr, int child);
     //return nodeptr's child's value
