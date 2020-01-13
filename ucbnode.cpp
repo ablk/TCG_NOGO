@@ -21,7 +21,7 @@ void ucbnode::Copy(ucbnode &u){
 	childptr = u.childptr;
 }
 
-void ucbnode::initucbnode(int i,bool j,double rmean,double rnum)
+void ucbnode::initucbnode(int i,bool j)
 {
     color=j;
     place=i;
@@ -31,8 +31,8 @@ void ucbnode::initucbnode(int i,bool j,double rmean,double rnum)
     memset(child,-1,sizeof(child));
     childptr=NULL;
     logc=1;
-    ravecount = rnum;
-    ravemean = rmean;
+    ravecount = ravenum;
+    ravemean = 0.5;
 }
 
 void ucbnode::addresult(double result)
@@ -94,7 +94,7 @@ void ucbnode::expansion(board &b)
 		if(child[i]!=-1)
 		{
             k=child[i];
-            childptr[k].initucbnode(i,j,0.5,ravenum);
+            childptr[k].initucbnode(i,j);
         }
     }
 }
