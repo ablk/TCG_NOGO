@@ -10,6 +10,7 @@ double MCTStree::getscore( ucbnode* nodeptr, int child)
 	}
     else{
         ret = tmp->ravemean*tmp->ravecount + tmp->mean*tmp->count + ExpansionCount*sqrt(2* nodeptr->logc * tmp->count);
+        ret = ret/(tmp->ravecount+tmp->count);
     }
     //cout<<tmp->ravemean<<' '<<ret/(N+NR)<<' '<<N<<' '<<NR<<' '<<nodeptr->logc<<endl;
 	return ret;
