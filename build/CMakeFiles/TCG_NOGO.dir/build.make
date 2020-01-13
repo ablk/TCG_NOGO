@@ -57,76 +57,76 @@ include CMakeFiles/TCG_NOGO.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/TCG_NOGO.dir/flags.make
 
-CMakeFiles/TCG_NOGO.dir/Main2.cpp.o: CMakeFiles/TCG_NOGO.dir/flags.make
-CMakeFiles/TCG_NOGO.dir/Main2.cpp.o: ../Main2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/0860034/TCG_NOGO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TCG_NOGO.dir/Main2.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCG_NOGO.dir/Main2.cpp.o -c /home/0860034/TCG_NOGO/Main2.cpp
+CMakeFiles/TCG_NOGO.dir/Main.cpp.o: CMakeFiles/TCG_NOGO.dir/flags.make
+CMakeFiles/TCG_NOGO.dir/Main.cpp.o: ../Main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/0860034/TCG_NOGO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TCG_NOGO.dir/Main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCG_NOGO.dir/Main.cpp.o -c /home/0860034/TCG_NOGO/Main.cpp
 
-CMakeFiles/TCG_NOGO.dir/Main2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCG_NOGO.dir/Main2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/0860034/TCG_NOGO/Main2.cpp > CMakeFiles/TCG_NOGO.dir/Main2.cpp.i
+CMakeFiles/TCG_NOGO.dir/Main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCG_NOGO.dir/Main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/0860034/TCG_NOGO/Main.cpp > CMakeFiles/TCG_NOGO.dir/Main.cpp.i
 
-CMakeFiles/TCG_NOGO.dir/Main2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCG_NOGO.dir/Main2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/0860034/TCG_NOGO/Main2.cpp -o CMakeFiles/TCG_NOGO.dir/Main2.cpp.s
+CMakeFiles/TCG_NOGO.dir/Main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCG_NOGO.dir/Main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/0860034/TCG_NOGO/Main.cpp -o CMakeFiles/TCG_NOGO.dir/Main.cpp.s
 
-CMakeFiles/TCG_NOGO.dir/Main2.cpp.o.requires:
+CMakeFiles/TCG_NOGO.dir/Main.cpp.o.requires:
 
-.PHONY : CMakeFiles/TCG_NOGO.dir/Main2.cpp.o.requires
+.PHONY : CMakeFiles/TCG_NOGO.dir/Main.cpp.o.requires
 
-CMakeFiles/TCG_NOGO.dir/Main2.cpp.o.provides: CMakeFiles/TCG_NOGO.dir/Main2.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/Main2.cpp.o.provides.build
-.PHONY : CMakeFiles/TCG_NOGO.dir/Main2.cpp.o.provides
+CMakeFiles/TCG_NOGO.dir/Main.cpp.o.provides: CMakeFiles/TCG_NOGO.dir/Main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/Main.cpp.o.provides.build
+.PHONY : CMakeFiles/TCG_NOGO.dir/Main.cpp.o.provides
 
-CMakeFiles/TCG_NOGO.dir/Main2.cpp.o.provides.build: CMakeFiles/TCG_NOGO.dir/Main2.cpp.o
-
-
-CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o: CMakeFiles/TCG_NOGO.dir/flags.make
-CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o: ../MCTStree2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/0860034/TCG_NOGO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o -c /home/0860034/TCG_NOGO/MCTStree2.cpp
-
-CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/0860034/TCG_NOGO/MCTStree2.cpp > CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.i
-
-CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/0860034/TCG_NOGO/MCTStree2.cpp -o CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.s
-
-CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o.requires:
-
-.PHONY : CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o.requires
-
-CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o.provides: CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o.provides.build
-.PHONY : CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o.provides
-
-CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o.provides.build: CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o
+CMakeFiles/TCG_NOGO.dir/Main.cpp.o.provides.build: CMakeFiles/TCG_NOGO.dir/Main.cpp.o
 
 
-CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o: CMakeFiles/TCG_NOGO.dir/flags.make
-CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o: ../ucbnode2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/0860034/TCG_NOGO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o -c /home/0860034/TCG_NOGO/ucbnode2.cpp
+CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o: CMakeFiles/TCG_NOGO.dir/flags.make
+CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o: ../MCTStree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/0860034/TCG_NOGO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o -c /home/0860034/TCG_NOGO/MCTStree.cpp
 
-CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/0860034/TCG_NOGO/ucbnode2.cpp > CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.i
+CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/0860034/TCG_NOGO/MCTStree.cpp > CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.i
 
-CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/0860034/TCG_NOGO/ucbnode2.cpp -o CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.s
+CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/0860034/TCG_NOGO/MCTStree.cpp -o CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.s
 
-CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o.requires:
+CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o.requires:
 
-.PHONY : CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o.requires
+.PHONY : CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o.requires
 
-CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o.provides: CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o.provides.build
-.PHONY : CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o.provides
+CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o.provides: CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o.provides.build
+.PHONY : CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o.provides
 
-CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o.provides.build: CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o
+CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o.provides.build: CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o
+
+
+CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o: CMakeFiles/TCG_NOGO.dir/flags.make
+CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o: ../ucbnode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/0860034/TCG_NOGO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o -c /home/0860034/TCG_NOGO/ucbnode.cpp
+
+CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/0860034/TCG_NOGO/ucbnode.cpp > CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.i
+
+CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/0860034/TCG_NOGO/ucbnode.cpp -o CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.s
+
+CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o.requires:
+
+.PHONY : CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o.requires
+
+CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o.provides: CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o.provides.build
+.PHONY : CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o.provides
+
+CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o.provides.build: CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o
 
 
 CMakeFiles/TCG_NOGO.dir/board.cpp.o: CMakeFiles/TCG_NOGO.dir/flags.make
@@ -155,17 +155,17 @@ CMakeFiles/TCG_NOGO.dir/board.cpp.o.provides.build: CMakeFiles/TCG_NOGO.dir/boar
 
 # Object files for target TCG_NOGO
 TCG_NOGO_OBJECTS = \
-"CMakeFiles/TCG_NOGO.dir/Main2.cpp.o" \
-"CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o" \
-"CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o" \
+"CMakeFiles/TCG_NOGO.dir/Main.cpp.o" \
+"CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o" \
+"CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o" \
 "CMakeFiles/TCG_NOGO.dir/board.cpp.o"
 
 # External object files for target TCG_NOGO
 TCG_NOGO_EXTERNAL_OBJECTS =
 
-../TCG_NOGO: CMakeFiles/TCG_NOGO.dir/Main2.cpp.o
-../TCG_NOGO: CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o
-../TCG_NOGO: CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o
+../TCG_NOGO: CMakeFiles/TCG_NOGO.dir/Main.cpp.o
+../TCG_NOGO: CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o
+../TCG_NOGO: CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o
 ../TCG_NOGO: CMakeFiles/TCG_NOGO.dir/board.cpp.o
 ../TCG_NOGO: CMakeFiles/TCG_NOGO.dir/build.make
 ../TCG_NOGO: CMakeFiles/TCG_NOGO.dir/link.txt
@@ -177,9 +177,9 @@ CMakeFiles/TCG_NOGO.dir/build: ../TCG_NOGO
 
 .PHONY : CMakeFiles/TCG_NOGO.dir/build
 
-CMakeFiles/TCG_NOGO.dir/requires: CMakeFiles/TCG_NOGO.dir/Main2.cpp.o.requires
-CMakeFiles/TCG_NOGO.dir/requires: CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o.requires
-CMakeFiles/TCG_NOGO.dir/requires: CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o.requires
+CMakeFiles/TCG_NOGO.dir/requires: CMakeFiles/TCG_NOGO.dir/Main.cpp.o.requires
+CMakeFiles/TCG_NOGO.dir/requires: CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o.requires
+CMakeFiles/TCG_NOGO.dir/requires: CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o.requires
 CMakeFiles/TCG_NOGO.dir/requires: CMakeFiles/TCG_NOGO.dir/board.cpp.o.requires
 
 .PHONY : CMakeFiles/TCG_NOGO.dir/requires

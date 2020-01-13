@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/TCG_NOGO.dir/Main2.cpp.o"
-  "CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o"
-  "CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o"
+  "CMakeFiles/TCG_NOGO.dir/Main.cpp.o"
+  "CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o"
+  "CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o"
   "CMakeFiles/TCG_NOGO.dir/board.cpp.o"
   "../TCG_NOGO.pdb"
   "../TCG_NOGO"

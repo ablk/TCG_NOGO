@@ -6,7 +6,7 @@
 #define float_tor 0.000066
 #define ExploreConst 0.25
 
-#define RandPlayTime 0.1
+#define RandPlayTime 0.0
 #define TimeLimit 0.75
 #define ExpansionCount 9
 #define RandExpansionCount 5

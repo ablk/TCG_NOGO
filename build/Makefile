@@ -123,59 +123,59 @@ TCG_NOGO/fast:
 	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/build
 .PHONY : TCG_NOGO/fast
 
-MCTStree2.o: MCTStree2.cpp.o
+MCTStree.o: MCTStree.cpp.o
 
-.PHONY : MCTStree2.o
-
-# target to build an object file
-MCTStree2.cpp.o:
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.o
-.PHONY : MCTStree2.cpp.o
-
-MCTStree2.i: MCTStree2.cpp.i
-
-.PHONY : MCTStree2.i
-
-# target to preprocess a source file
-MCTStree2.cpp.i:
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.i
-.PHONY : MCTStree2.cpp.i
-
-MCTStree2.s: MCTStree2.cpp.s
-
-.PHONY : MCTStree2.s
-
-# target to generate assembly for a file
-MCTStree2.cpp.s:
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/MCTStree2.cpp.s
-.PHONY : MCTStree2.cpp.s
-
-Main2.o: Main2.cpp.o
-
-.PHONY : Main2.o
+.PHONY : MCTStree.o
 
 # target to build an object file
-Main2.cpp.o:
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/Main2.cpp.o
-.PHONY : Main2.cpp.o
+MCTStree.cpp.o:
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.o
+.PHONY : MCTStree.cpp.o
 
-Main2.i: Main2.cpp.i
+MCTStree.i: MCTStree.cpp.i
 
-.PHONY : Main2.i
+.PHONY : MCTStree.i
 
 # target to preprocess a source file
-Main2.cpp.i:
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/Main2.cpp.i
-.PHONY : Main2.cpp.i
+MCTStree.cpp.i:
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.i
+.PHONY : MCTStree.cpp.i
 
-Main2.s: Main2.cpp.s
+MCTStree.s: MCTStree.cpp.s
 
-.PHONY : Main2.s
+.PHONY : MCTStree.s
 
 # target to generate assembly for a file
-Main2.cpp.s:
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/Main2.cpp.s
-.PHONY : Main2.cpp.s
+MCTStree.cpp.s:
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/MCTStree.cpp.s
+.PHONY : MCTStree.cpp.s
+
+Main.o: Main.cpp.o
+
+.PHONY : Main.o
+
+# target to build an object file
+Main.cpp.o:
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/Main.cpp.o
+.PHONY : Main.cpp.o
+
+Main.i: Main.cpp.i
+
+.PHONY : Main.i
+
+# target to preprocess a source file
+Main.cpp.i:
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/Main.cpp.i
+.PHONY : Main.cpp.i
+
+Main.s: Main.cpp.s
+
+.PHONY : Main.s
+
+# target to generate assembly for a file
+Main.cpp.s:
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/Main.cpp.s
+.PHONY : Main.cpp.s
 
 board.o: board.cpp.o
 
@@ -204,32 +204,32 @@ board.cpp.s:
 	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/board.cpp.s
 .PHONY : board.cpp.s
 
-ucbnode2.o: ucbnode2.cpp.o
+ucbnode.o: ucbnode.cpp.o
 
-.PHONY : ucbnode2.o
+.PHONY : ucbnode.o
 
 # target to build an object file
-ucbnode2.cpp.o:
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.o
-.PHONY : ucbnode2.cpp.o
+ucbnode.cpp.o:
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.o
+.PHONY : ucbnode.cpp.o
 
-ucbnode2.i: ucbnode2.cpp.i
+ucbnode.i: ucbnode.cpp.i
 
-.PHONY : ucbnode2.i
+.PHONY : ucbnode.i
 
 # target to preprocess a source file
-ucbnode2.cpp.i:
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.i
-.PHONY : ucbnode2.cpp.i
+ucbnode.cpp.i:
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.i
+.PHONY : ucbnode.cpp.i
 
-ucbnode2.s: ucbnode2.cpp.s
+ucbnode.s: ucbnode.cpp.s
 
-.PHONY : ucbnode2.s
+.PHONY : ucbnode.s
 
 # target to generate assembly for a file
-ucbnode2.cpp.s:
-	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/ucbnode2.cpp.s
-.PHONY : ucbnode2.cpp.s
+ucbnode.cpp.s:
+	$(MAKE) -f CMakeFiles/TCG_NOGO.dir/build.make CMakeFiles/TCG_NOGO.dir/ucbnode.cpp.s
+.PHONY : ucbnode.cpp.s
 
 # Help Target
 help:
@@ -240,18 +240,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... TCG_NOGO"
 	@echo "... edit_cache"
-	@echo "... MCTStree2.o"
-	@echo "... MCTStree2.i"
-	@echo "... MCTStree2.s"
-	@echo "... Main2.o"
-	@echo "... Main2.i"
-	@echo "... Main2.s"
+	@echo "... MCTStree.o"
+	@echo "... MCTStree.i"
+	@echo "... MCTStree.s"
+	@echo "... Main.o"
+	@echo "... Main.i"
+	@echo "... Main.s"
 	@echo "... board.o"
 	@echo "... board.i"
 	@echo "... board.s"
-	@echo "... ucbnode2.o"
-	@echo "... ucbnode2.i"
-	@echo "... ucbnode2.s"
+	@echo "... ucbnode.o"
+	@echo "... ucbnode.i"
+	@echo "... ucbnode.s"
 .PHONY : help
 
 

@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/0860034/TCG_NOGO/MCTStree2.cpp
-MCTStree2.h
-/home/0860034/TCG_NOGO/MCTStree2.h
+/home/0860034/TCG_NOGO/MCTStree.cpp
+MCTStree.h
+/home/0860034/TCG_NOGO/MCTStree.h
 
-/home/0860034/TCG_NOGO/MCTStree2.h
-ucbnode2.h
-/home/0860034/TCG_NOGO/ucbnode2.h
+/home/0860034/TCG_NOGO/MCTStree.h
+ucbnode.h
+/home/0860034/TCG_NOGO/ucbnode.h
 Parameters.h
 /home/0860034/TCG_NOGO/Parameters.h
 
-/home/0860034/TCG_NOGO/Main2.cpp
+/home/0860034/TCG_NOGO/Main.cpp
 iostream
 -
 set
@@ -37,8 +37,8 @@ string.h
 -
 sstream
 -
-MCTStree2.h
-/home/0860034/TCG_NOGO/MCTStree2.h
+MCTStree.h
+/home/0860034/TCG_NOGO/MCTStree.h
 Parameters.h
 /home/0860034/TCG_NOGO/Parameters.h
 
@@ -80,11 +80,11 @@ math.h
 
 /home/0860034/TCG_NOGO/boardcn.h
 
-/home/0860034/TCG_NOGO/ucbnode2.cpp
-ucbnode2.h
-/home/0860034/TCG_NOGO/ucbnode2.h
+/home/0860034/TCG_NOGO/ucbnode.cpp
+ucbnode.h
+/home/0860034/TCG_NOGO/ucbnode.h
 
-/home/0860034/TCG_NOGO/ucbnode2.h
+/home/0860034/TCG_NOGO/ucbnode.h
 board.h
 /home/0860034/TCG_NOGO/board.h
 math.h
