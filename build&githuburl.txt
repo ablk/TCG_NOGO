@@ -1,0 +1,13 @@
+build:
+mkdir build && cd build
+cmake ..
+make
+
+build & execute:
+./build_exec.sh
+
+build & execute100:
+./buildexec100.sh
+
+url:
+https://github.com/ablk/TCG_NOGO.git

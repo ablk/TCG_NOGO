@@ -1,20 +1,23 @@
 #include "MCTStree.h"
 
+
 double MCTStree::getscore( ucbnode* nodeptr, int child)
 {
 	ucbnode *tmp = (nodeptr->childptr)+child;
-	char &p = tmp->place;
-	bool &c = tmp->color;
-	double &N = tmp->count ;
-	double &NR = tmp->ravecount;
-	double ret = tmp->ravemean*NR + tmp->mean*N +  sqrt( nodeptr->logc * N )* UCB_WEIGHT;
-	//cout<<tmp->ravemean<<' '<<ret/(N+NR)<<' '<<N<<' '<<NR<<' '<<nodeptr->logc<<endl;
-	//return tmp->mean + UCB_WEIGHT * sqrt(nodeptr->logc / (N + 1));
-	return ret / (N+NR);
+    double ret;
+    if(!USE_RAVE){
+        ret = tmp->mean + ExploreConst*sqrt(2* nodeptr->logc / tmp->count);
+	}
+    else{
+        ret = tmp->ravemean + ExpansionCount*sqrt(2* nodeptr->ravelogc / tmp->ravecount);
+    }
+    //cout<<tmp->ravemean<<' '<<ret/(N+NR)<<' '<<N<<' '<<NR<<' '<<nodeptr->logc<<endl;
+	return ret;
 }
 
 ucbnode* MCTStree::getbestchild(ucbnode* nodeptr)
 {
+    
 	if(nodeptr->csize == 0)return NULL;
 	int i,ret=0;
 	double ans,tmp = getscore(nodeptr,0),tma;//tmp minus anwser
@@ -25,24 +28,24 @@ ucbnode* MCTStree::getbestchild(ucbnode* nodeptr)
 	{
 		tmp = getscore(nodeptr,i);
 		tma = tmp-ans;
-		if( tma > -0.0001 )//tmp >= ans
+		if( tma > -float_tor )//tmp >= ans
 		{
-			if(tma > 0.0001) // tmp > ans
+			if(tma > float_tor) // tmp > ans
 			{
 				selectlist[0]=i;
 				slsize = 1;
 				ans = tmp;
-			}else  //tmp == ans
+            }else  //tmp == ans
 			{
 				selectlist[slsize]=i;
 				slsize ++ ;
-			}
-		}
-	}
+            }
+        }
+    }
 	//for(i=0;i<slsize;i++)
 	//{
-	//	cout<<selectlist[i]<<' ';
-	//}
+        //	cout<<selectlist[i]<<' ';
+    //}
 	//cout<<endl;
 	ret = selectlist[ rand() % slsize ];
 	return (nodeptr->childptr +ret);
@@ -50,8 +53,8 @@ ucbnode* MCTStree::getbestchild(ucbnode* nodeptr)
 
 void MCTStree::select(board &b)
 {
-	
-	bool j = ! b.just_play_color();//next to play
+    
+	//bool j = ! b.just_play_color();//next to play
 	ucbnode* nodeptr = root;
 	b.bpsize=0;
 	b.wpsize=0;
@@ -59,46 +62,52 @@ void MCTStree::select(board &b)
 	path.push_back(nodeptr);
 	while(nodeptr->childptr != NULL && nodeptr->csize != 0)
 	{
-		nodeptr = getbestchild(nodeptr);
-		path.push_back(nodeptr);
-	//	cout<<inttostring(nodeptr->place)<<' ';
+        if(!randplay){
+            nodeptr = getbestchild(nodeptr);
+            }else{
+            nodeptr = nodeptr->childptr+(rand()%(nodeptr->csize));
+        }
+        path.push_back(nodeptr);
+        //	cout<<inttostring(nodeptr->place)<<' ';
 		if(nodeptr->color == BLACK)
 		{
 			b.addbp(nodeptr->place);
 			sbnum++;
-		}else
+        }else
 		{
 			b.addwp(nodeptr->place);
 			swnum++;
-		}
+        }
 		b.add(nodeptr->place,nodeptr->color);
-	}
-//	b.showboard();
+    }
+    //	b.showboard();
 	//system("pause");
 }
 void MCTStree::update(double result,board& b)
 {
-	for(int i=0;i<path.size();i++)
+	for(uint32_t i=0;i<path.size();i++)
 	{
 		path[i]->addresult(result);
-		if(path[i] -> color ==0)
-		{
-			for(int j=0;j<b.wpsize;j++)
-			{
-				int k = (path[i]->child[b.wpath[j]]);
-				if( k !=-1)
-					((path[i]->childptr)+k)->addraveresult(result);
-			}
-		}else
-		{
-			for(int j=0;j<b.bpsize;j++)
-			{
-				int k = (path[i]->child[b.bpath[j]]);
-				if( k != -1)
-					((path[i]->childptr)+k)->addraveresult(result);
-			}
-		}
-	}
+        if(USE_RAVE){
+            if(path[i] -> color ==0)
+            {
+                for(int j=0;j<b.wpsize;j++)
+                {
+                    int k = (path[i]->child[b.wpath[j]]);
+                    if( k !=-1)
+                        ((path[i]->childptr)+k)->addraveresult(result);
+                }
+            }else
+            {
+                for(int j=0;j<b.bpsize;j++)
+                {
+                    int k = (path[i]->child[b.bpath[j]]);
+                    if( k != -1)
+                        ((path[i]->childptr)+k)->addraveresult(result);
+                }
+            }
+        }
+    }
 }
 void MCTStree::run_a_cycle()
 {
@@ -109,27 +118,26 @@ void MCTStree::run_a_cycle()
 	select(b);
 	ucbnode &last=(*(path.back()));
 	ucbnode *nodeptr;
-	if(last.csize==0 && last.count > basenum )//¦Ü¤Ösimulate 1 ¦¸
+	if(last.csize==0 && ((last.count > ExpansionCount && last.mean > ExpansionMean) ||(randplay && last.count > RandExpansionCount) )  )//ï½¦ï¾œï½¤ï¾–simulate 1 ï½¦ï½¸
 	{
-		last.expansion(b,rave_num,rave_wnum);
+		last.expansion(b);
 		if(last.csize!=0)
 		{
-			totalnode+=last.csize;
 			nodeptr = getbestchild(&last);
 			path.push_back(nodeptr);
 			if(nodeptr->color == 0)
 			{
 				b.addbp(nodeptr->place);
 				sbnum++;
-			}else
+            }else
 			{
 				b.addwp(nodeptr->place);
 				swnum++;
-			}
+            }
 			b.add(nodeptr->place,nodeptr->color);
 			
-		}
-	}
+        }
+    }
 	total += sbnum;
 	total += swnum;
 	b.getv(bone,wone,two,bsize,wsize,tsize);
@@ -137,13 +145,13 @@ void MCTStree::run_a_cycle()
 	if((b.just_play_color()==BLACK) && (wsize + tsize)==0)
 	{
 		result = 1;
-	}else if(b.just_play_color()==WHITE && (bsize + tsize)==0)
+    }else if(b.just_play_color()==WHITE && (bsize + tsize)==0)
 	{
 		result = -1;
-	}else
+    }else
 	{
 		result=b.simulate(!b.just_play_color(),bone,wone,two,bsize,wsize,tsize);
-	}
+    }
 	update(result,b);
 }
 void MCTStree::reset(board &b)
@@ -155,9 +163,24 @@ void MCTStree::reset(board &b)
 	root -> count = basenum;
 	root -> logc = 1;
 	memset(root -> child,-1,sizeof(root -> child)  );
-	root-> expansion(b,rave_num,rave_wnum);
+	root-> expansion(b);
 	total = 0;
-	totalnode =0;
+    path.clear();
+	path.push_back(root);
+   	randplay=true;
+}
+
+void MCTStree::setroot(ucbnode* r,board &b)
+{	
+	root = r;
+    rboard = b;
+	total = root->count;
+    path.clear();
+	path.push_back(root);
+   	randplay=true;
+	if(root->csize==0){
+		root->expansion(b);
+	}
 }
 
 void MCTStree::show_path()
@@ -172,17 +195,18 @@ void MCTStree::show_path()
 		i++;
 		if(nodeptr != NULL){
 			if(nodeptr->color == BLACK)
-				cerr<<"B(";
+            cerr<<"B(";
 			else
-				cerr<<"W(";
+            cerr<<"W(";
 			cerr<<inttostring(nodeptr -> place)<<") ";
-		}
-	}
+        }
+    }
 	cerr<<endl;
 }
 void MCTStree::clear()
 {
 	if( root != NULL)delete root;
+	root=NULL;
 }
 string MCTStree::inttoGTPstring(int i)
 {

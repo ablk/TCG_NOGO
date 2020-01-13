@@ -22,9 +22,9 @@ SET(EXECUTABLE TCG_NOGO)
 SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -Wall -O3")
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
 FILE(GLOB SRC_FILES 
-    Main2.cpp
-    MCTStree2.cpp
-    ucbnode2.cpp
+    Main.cpp
+    MCTStree.cpp
+    ucbnode.cpp
     board.cpp
 )
 ADD_EXECUTABLE(${EXECUTABLE}  ${SRC_FILES})

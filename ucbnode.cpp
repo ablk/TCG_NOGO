@@ -1,19 +1,25 @@
 #include "ucbnode.h"
 
-
-void ucbnode::setlogc()
-{
-    logc = log(count);
-}
 ucbnode::ucbnode()
 {
-    
 }
 ucbnode::~ucbnode()
 {
     if(childptr != NULL) {delete [] childptr;childptr=NULL;}
 }
-
+void ucbnode::Copy(ucbnode &u){
+	place = u.place;
+	color = u.color;
+	memset(child,-1,sizeof(child));
+	for(int c=0;c<u.csize;c++){
+		child[c]=u.child[c];
+	}
+	csize = u.csize;
+	count = u.count;
+	mean = u.mean;
+	logc = u.logc;
+	childptr = u.childptr;
+}
 
 void ucbnode::initucbnode(int i,bool j,double rmean,double rnum)
 {
@@ -22,39 +28,50 @@ void ucbnode::initucbnode(int i,bool j,double rmean,double rnum)
     mean = 0.5;
     count = basenum;
     csize=0;
-    ravecount = rnum;
-    ravemean = rmean;
     memset(child,-1,sizeof(child));
     childptr=NULL;
     logc=1;
+    ravecount = rnum;
+    ravemean = rmean;
 }
 
 void ucbnode::addresult(double result)
 {
+    count +=1;
+    logc = log(count);
+    
+    
     if((result > 0 && color==BLACK) || (result < 0 && color==WHITE) )
     {
-        mean = (mean*count+1.00)/(count+1);
+        mean = mean + (1.00 - mean)/count;
+        //mean=1.0;
     }else
     {
-        mean = (mean*count)/(count+1);
+        mean = mean - mean/count;
+        //mean=0.0;
     }
-    count+=1;
-    setlogc();
 }
-void ucbnode::addraveresult(double result)//result:-1 ¥ÕÄ¹ 1 ¶ÂÄ¹
+void ucbnode::addraveresult(double result)
 {
+    
+    ravecount +=1;
+    ravelogc = log(ravecount);
+    
+    
     if((result > 0 && color==BLACK) || (result < 0 && color==WHITE) )
     {
-        ravemean = (ravemean*ravecount+1.00)/(ravecount+1);
+        ravemean = ravemean + (1.00 - ravemean)/ravecount;
+        //mean=1.0;
     }else
     {
-        ravemean = (ravemean*ravecount)/(ravecount+1);
+        ravemean = ravemean - ravemean/ravecount;
+        //mean=0.0;
     }
-    ravecount+=1;
+
 }
-void ucbnode::expansion(board &b,double rave_num[2][BOARDSSIZE] ,double rave_wnum[2][BOARDSSIZE])
+void ucbnode::expansion(board &b)
 {
-	int i,k;
+	int i,k=0;
 	bool j;
 	j=!b.just_play_color();
 	csize=0;
@@ -62,42 +79,51 @@ void ucbnode::expansion(board &b,double rave_num[2][BOARDSSIZE] ,double rave_wnu
 	{
 		if(b.check(i,j))
 		{
+            child[i]=k;
 			csize++;
-		}
-	}
+            k++;
+        }
+    }
 	if(csize==0)
 	{
 		return;
-	}
+    }
 	childptr = new ucbnode [csize];
-	double rmean,rnum;
-	k=0;
-	for(i=0;i<BOARDSSIZE;i++)
+    for(i=0;i<BOARDSSIZE;i++)
 	{
-		if(b.check(i,j))
+		if(child[i]!=-1)
 		{
-			child[i]=k;
-			rmean = 0.5;
-			rnum = ravenum;
-			childptr[k].initucbnode(i,j,rmean,rnum);
-			k++;
-		}
-	}
+            k=child[i];
+            childptr[k].initucbnode(i,j);
+        }
+    }
 }
 int ucbnode::getbestmove()
 {
 	int ret = -1;
-	double ans=-100,tmp;
+	double ans=-666,tmp;
 	for(int i = 0;i<csize;i++)
 	{
-		tmp = childptr[i].count;// * childptr[i].mean;
-		if(tmp > ans)
+		tmp = childptr[i].count;//*(1-getMaxChildMean());// + childptr[i].count*childptr[i].mean;///////////////////
+        if(tmp > ans)
 		{
 			ans = tmp;
 			ret=i;
+        }
+    }
+	return ret;
+}
+
+double ucbnode::getMaxChildMean(){
+	if(csize==0)return 0.5;
+	double m=0;
+
+	for(int c=0;c<csize;c++){
+		if(childptr[c].mean>m){
+			m=childptr[c].mean;
 		}
 	}
-	return ret;
+	return m;
 }
 
 vector<float> ucbnode::getPolicy()
@@ -107,11 +133,11 @@ vector<float> ucbnode::getPolicy()
 	for (int i = 0; i < csize; i++)
 	{
 		sum+= childptr[i].count;
-	}
+    }
 	for (int i = 0; i < csize; i++)
 	{
 		ret[childptr[i].place] = childptr[i].count / sum;
-	}
+    }
 	return ret;
 }
 
@@ -121,16 +147,13 @@ void ucbnode::show_child()
 	{
 		if(childptr[i].count<10)continue;
 		cerr<< inttoGTPstring((int)childptr[i].place)<<' '<<childptr[i].mean<<' '<<childptr[i].count<<' ';
-		//cerr<<sqrt( logc / ((childptr[i].count) - minusnum))* UCB_WEIGHT<<' ' ;
-		cerr<<(childptr[i].ravemean)<<' '<<(childptr[i].ravecount)<<endl;
-	}
+    }
+	cerr<<endl;
 }
 float ucbnode::show_inf(int best)
 {
-		cerr<<"total : "<< count -basenum <<endl<<"winrate :"<<(childptr[best].mean);
-		//cerr<<"\nlog : "<<sqrt( logc / ((childptr[best].count) - minusnum))* UCB_WEIGHT ;
-		cerr<<"\nrave : "<<(childptr[best].ravemean)<<' '<<(childptr[best].ravecount)<<endl;
-		return childptr[best].mean;
+    cerr<<"total : "<< count -basenum <<endl<<"winrate :"<<(childptr[best].mean)<<endl;
+    return childptr[best].mean;
 }
 
 string ucbnode::inttoGTPstring(int i)
