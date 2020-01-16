@@ -198,7 +198,7 @@ int main(int argc, char** argv)
         }
 		else if(s== "name")
 		{
-			cout<<"=YEEEEEEEEEEEEEEEEEEEEE\n\n";
+			cout<<"=YEEEEEEEE\n\n";
         }else if(s== "time")
 		{
 			cout<<"="<<endl<<endl;
